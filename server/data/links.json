@@ -1,0 +1,87 @@
+[
+  {
+    "id": "7266a770-142d-7e0c-f999-fd35bac51743",
+    "title": "My Portfolio",
+    "link": "https://baiastan-zhuz.netlify.app/",
+    "text": "",
+    "category": "navbar"
+  },
+  {
+    "id": "67ce3bb5-88ab-975f-03d5-b06fc01665f5",
+    "title": "Lucid Charts",
+    "link": "https://lucid.app/lucidchart/3c9a5736-1124-40d6-ba5f-ae3cc36195c6/edit?beaconFlowId=CCFBEFD89CBA52FC&invitationId=inv_8b7f392e-526f-492d-bc23-718ba17c104b&page=0_0#",
+    "text": "My Trucker's Project",
+    "category": "usefulInfo"
+  },
+  {
+    "id": "4121a743-04b0-c322-a034-ee7865a072b7",
+    "title": "Udemy Jonas",
+    "link": "https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/learn/lecture/15080916#questions",
+    "text": "Need to finish later",
+    "category": "tutorials"
+  },
+  {
+    "id": "78d31844-9870-4b78-4b9c-d6201fd93a46",
+    "title": " JavaScript Mastery",
+    "link": "https://www.youtube.com/watch?v=k4lHXIzCEkM",
+    "text": "Build and Deploy a Full Stack MERN Application With CRUD, Auth, and Charts Using Refine",
+    "category": "youtube"
+  },
+  {
+    "id": "c360ffd7-371d-eb22-28d3-f85da7500eed",
+    "title": "ChatGPT",
+    "link": "https://chat.openai.com/chat",
+    "text": "",
+    "category": "navbar"
+  },
+  {
+    "id": "50e5a098-1018-cc17-ba41-089bfc3a5662",
+    "title": "Code With Mosh MERN",
+    "link": "https://codewithmosh.com/courses/enrolled/293204",
+    "text": "",
+    "category": "tutorials"
+  },
+  {
+    "id": "acc55e35-3506-83b9-9781-fed0729f2785",
+    "title": "MERN EdRoh",
+    "link": "https://www.youtube.com/watch?v=uoJ0Tv-BFcQ&t=321s",
+    "text": "Build A MERN Finance Dashboard App | Machine Learning, Typescript, React, Node, MUI, Deployment",
+    "category": "youtube"
+  },
+  {
+    "id": "123",
+    "title": "Job Market",
+    "link": "https://docs.google.com/spreadsheets/d/18o1audWcuZU_RS4PqxHHwZNVQJVUe93gR3izR5s_rDQ/edit#gid=0",
+    "category": "navbar"
+  },
+  {
+    "id": "1234dfg",
+    "title": "Linkedin",
+    "link": "https://www.linkedin.com/feed",
+    "category": "navbar"
+  },
+  {
+    "id": "12345dfg",
+    "title": "My Email",
+    "link": "https://mail.google.com/mail/u/1/#inbox",
+    "category": "navbar"
+  },
+  {
+    "id": "123456gfg",
+    "title": "GitHub",
+    "link": "https://github.com/Baiastan",
+    "category": "navbar"
+  },
+  {
+    "id": "1343456sgdg",
+    "title": "Leetcode",
+    "link": "https://leetcode.com/baystan196",
+    "category": "navbar"
+  },
+  {
+    "id": "1235652fdgddg",
+    "title": "AlgoExpert",
+    "link": "https://www.algoexpert.io/questions",
+    "category": "navbar"
+  }
+]
