@@ -8,7 +8,7 @@ Instructions How to Run
 1. git clone this repo
 SERVER
 1. "npm init"
-2. "npm run start"
+2. "npm run dev" - for nodemon to work
 
 In Data folder, you might wanna delete my data, but leave empty array. Files sould have emty array like this => [], otherwise it won't work. 
 
