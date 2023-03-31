@@ -1,5 +1,9 @@
 # desktop-manager
-This project is manage my links to important websites. Data is saved locally. 
+This project is built in learning purposes.
+
+This project is to manage my links to important websites. Data is saved locally. 
+There is also a Todo List
+
 Instructions How to Run
 1. git clone this repo
 SERVER
