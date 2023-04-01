@@ -7,14 +7,15 @@ There is also a Todo List
 Instructions How to Run
 1. git clone this repo
 SERVER
-1. "npm init"
+1. "npm install"
 2. "npm run dev" - for nodemon to work
 
 In Data folder, you might wanna delete my data, but leave empty array. Files sould have emty array like this => [], otherwise it won't work. 
 
 CLIENT
-1. "npm init" at client folder
-2. "npm run dev"
+1. "npm install" at client folder
+2.  "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch"
+3.  "npm run dev"
 
 
 
