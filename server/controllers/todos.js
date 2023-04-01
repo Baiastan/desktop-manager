@@ -78,16 +78,18 @@ export const deleteTodo = async (req, res) => {
 export const updateTodo = async (req, res) => {
   try {
     const { id } = req.params;
+
     const { completed } = req.body;
+
+    console.log(req.body);
+    console.log(id, completed);
+
+    if (completed === undefined) throw new Error(`completed is ${completed}`);
 
     if (!data) {
       throw new Error(`Could not find the file in ${__dirname} directory`);
     }
     const json = JSON.parse(data);
-
-    // const todoItem = json.filter((el) => el.id === id);
-
-    // todoItem.completed = completed;
 
     const newData = json.map((el) => {
       if (el.id === id) {
@@ -97,11 +99,12 @@ export const updateTodo = async (req, res) => {
       }
     });
 
-    // const filteredTodos = json.filter((el) => el.id !== id);
-
     await writeFile(`${__dirname}/data/todos.json`, JSON.stringify(newData));
 
-    res.status(200).json({ success: "Todo was uptated!", data: newData });
+    res.status(200).json({
+      success: "Todo was uptated!",
+      data: newData.filter((el) => el.id === id),
+    });
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
