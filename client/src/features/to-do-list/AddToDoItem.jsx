@@ -31,19 +31,21 @@ const AddToDoItem = ({ onCloseRequest }) => {
 
     if (deadline) {
       if (time === null) {
-        d = dateValue.$d;
+        d = dateValue.$d.toISOString();
       } else {
-        d = time.$d;
+        d = time.$d.toISOString();
       }
     } else {
       d = null;
     }
 
+    const dateCreated = new Date().toISOString();
+
     const data = {
       id: uuid(),
       title: todo,
       details: text,
-      dateCreated: new Date(),
+      dateCreated,
       deadline: d,
       completed: false,
     };

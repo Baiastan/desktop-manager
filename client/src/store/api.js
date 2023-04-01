@@ -40,10 +40,10 @@ export const api = createApi({
       }),
     }),
     updateTodo: build.mutation({
-      query: (id, data) => ({
+      query: ({ id, ...completed }) => ({
         url: `todos/${id}`,
         method: "PUT",
-        body: data,
+        body: completed,
       }),
       invalidatesTags: ["ToDo"],
     }),

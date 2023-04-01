@@ -25,7 +25,7 @@ const ToDoList = ({ data }) => {
               key={id}
               title={title}
               deadline={deadline}
-              completed={completed}
+              completed={completed || false}
               details={details}
               dateCreated={dateCreated}
               id={id}

@@ -23,7 +23,7 @@ const Navbar = ({ data }) => {
               <a href={el.link} target="_blank" rel="noreferrer">
                 {el.title}
               </a>
-              {deleteId === el.id && <DeleteForm id={el.id} />}
+              {deleteId === el.id && <DeleteForm id={el.id} type="links" />}
             </li>
           );
         })}

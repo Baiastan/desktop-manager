@@ -1,18 +1,1 @@
-[
-  {
-    "id": "0855043b-78f8-8ed6-a371-a6e422149b98",
-    "title": "Need to find second job",
-    "details": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil totam placeat facilis voluptates est veritatis enim sapiente deserunt explicabo praesentium ea incidunt, consequuntur consectetur eius. Velit fugit deserunt sapiente veritatis!",
-    "dateCreated": "2023-03-31T10:22:53.236Z",
-    "deadline": "2023-04-13T07:00:00.000Z",
-    "completed": false
-  },
-  {
-    "id": "bcb429c4-b2b5-629b-6ea1-7c6186c5b0d0",
-    "title": "Need to finish EdRoh Tutotrial",
-    "details": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil totam placeat facilis voluptates est veritatis enim sapiente deserunt explicabo praesentium ea incidunt, consequuntur consectetur eius. Velit fugit deserunt sapiente veritatis!",
-    "dateCreated": "2023-03-31T10:00:52.359Z",
-    "deadline": null,
-    "completed": true
-  }
-]
+[{"id":"1ffb4b94-d179-0812-05d2-496c60c6cc91","title":"Iftar at Emir&Asel's place","details":"get some gift for them ","dateCreated":"2023-04-01T00:58:04.804Z","deadline":"2023-04-02T01:00:00.000Z","completed":false},{"id":"79532c87-9a19-1cb8-ce9a-f1b08c639c09","title":"Get ready bmw for tomorrow at 3pm for pick up","details":"","dateCreated":"2023-04-01T00:55:55.205Z","deadline":"2023-04-01T20:00:00.000Z","completed":false},{"id":"29e3a7ef-45c2-13f9-0915-8a5bb6fbecf2","title":"swgs","details":"sdgsd","dateCreated":"2023-03-31T22:33:50.073Z","deadline":null,"completed":false},{"id":"0855043b-78f8-8ed6-a371-a6e422149b98","title":"Need to find second job","details":"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil totam placeat facilis voluptates est veritatis enim sapiente deserunt explicabo praesentium ea incidunt, consequuntur consectetur eius. Velit fugit deserunt sapiente veritatis!","dateCreated":"2023-03-31T10:22:53.236Z","deadline":"2023-04-13T07:00:00.000Z","completed":true},{"id":"bcb429c4-b2b5-629b-6ea1-7c6186c5b0d0","title":"Need to finish EdRoh Tutotrial","details":"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil totam placeat facilis voluptates est veritatis enim sapiente deserunt explicabo praesentium ea incidunt, consequuntur consectetur eius. Velit fugit deserunt sapiente veritatis!","dateCreated":"2023-03-31T10:00:52.359Z","deadline":null,"completed":true}]
