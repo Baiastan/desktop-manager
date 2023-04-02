@@ -14,17 +14,24 @@ const TodoItem = ({ id, title, details, completed, deadline, dateCreated }) => {
   const [isCompleted, setIsCompleted] = useState(completed);
   const [updateTodo, {}] = useUpdateTodoMutation();
 
-  const handleChangeStatus = async () => {
+  const handleChangeStatus = async (event) => {
+    event.stopPropagation();
     setIsCompleted(!isCompleted);
 
     const res = await updateTodo({ id, completed: !isCompleted });
   };
 
   return (
-    <li className={`flex flex-col hover:cursor-pointer mb-4`}>
+    <li
+      className={`flex flex-col hover:cursor-pointer mb-2 hover:bg-dark p-1 hover:text-blue-hover`}
+      onClick={() => setOpen(!open)}
+    >
       <div className="flex justify-between items-center text-md">
         <div className="flex items-center">
-          <button onClick={handleChangeStatus} className="mt-1">
+          <button
+            onClick={(event) => handleChangeStatus(event)}
+            className="mt-1"
+          >
             {isCompleted ? (
               <MdDoneOutline className="text-green-light" />
             ) : (
@@ -32,11 +39,10 @@ const TodoItem = ({ id, title, details, completed, deadline, dateCreated }) => {
             )}
           </button>
           <h3
-            className={`text-2xl pl-3 hover:text-blue-hover ${
+            className={`text-2xl pl-3  ${
               isCompleted ? "line-through text-red-500" : ""
             }
       `}
-            onClick={() => setOpen(!open)}
           >
             {title}
           </h3>
