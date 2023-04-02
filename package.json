@@ -1,0 +1,24 @@
+{
+  "name": "desktop-manager",
+  "version": "1.0.0",
+  "description": "This project is built in learning purposes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npm run server --prefix server\" \"npm run client --prefix client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Baiastan/desktop-manager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Baiastan/desktop-manager/issues"
+  },
+  "homepage": "https://github.com/Baiastan/desktop-manager#readme",
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
