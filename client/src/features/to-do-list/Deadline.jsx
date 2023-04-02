@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from "react";
 
-const Deadline = ({ deadline, dateCreated }) => {
+const Deadline = ({ deadline, dateCreated, completed }) => {
   const [timeLeft, setTimeLeft] = useState("");
   const [updateFrequency, setUpdateFrequency] = useState(86400000);
   const [isOverdue, setIsOverdue] = useState(false);
+
+  if (!deadline)
+    return !completed ? (
+      <div className="text-sm">No Deadline</div>
+    ) : (
+      <p className="text-green-light">DONE</p>
+    );
 
   const handleDeadline = (end) => {
     const now = new Date();
     const endDate = new Date(end);
     const diff = endDate - now;
 
-    if (diff < 0) {
+    if (diff < 0 && deadline) {
       setIsOverdue(true);
       return "Overdue";
     }
@@ -35,7 +42,7 @@ const Deadline = ({ deadline, dateCreated }) => {
     } else if (minutes > 5) {
       setUpdateFrequency(60000);
       return `${minutes} minutes`;
-    } else if (minutes <= 5) {
+    } else if (minutes <= 5 && minutes >= 1) {
       setUpdateFrequency(1000);
       return `${minutes} minutes ${seconds} seconds`;
     } else {
@@ -57,13 +64,20 @@ const Deadline = ({ deadline, dateCreated }) => {
   }, [dateCreated, deadline, updateFrequency]);
 
   const textColor =
-    timeLeft.includes("minute") && !timeLeft.includes("hour")
+    (timeLeft.includes("minutes") || timeLeft.includes("seconds")) &&
+    !timeLeft.includes("hour")
       ? "text-red-500"
-      : "text-white";
+      : "text-green-light";
 
   return (
     <>
-      <div className={textColor}>{timeLeft}</div>
+      {!completed ? (
+        <p className={`${!isOverdue ? textColor : "text-yellow-300"} text-lg`}>
+          {timeLeft}
+        </p>
+      ) : (
+        <p className="text-green-light">DONE</p>
+      )}
     </>
   );
 };

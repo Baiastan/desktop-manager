@@ -42,9 +42,13 @@ const TodoItem = ({ id, title, details, completed, deadline, dateCreated }) => {
           </h3>
         </div>
 
-        <div className="flex w-2/6 justify-between">
-          <Deadline deadline={deadline} dateCreated={dateCreated} />
-          <div>
+        <div className="flex w-2/6 justify-between items-center">
+          <Deadline
+            deadline={deadline}
+            dateCreated={dateCreated}
+            completed={isCompleted}
+          />
+          <div className="flex items-center">
             <button
               onClick={() => setOpen(!open)}
               className="hover:opacity-50 mr-1"
