@@ -5,7 +5,7 @@ import {
   MdDoneOutline,
   MdCheckBoxOutlineBlank,
 } from "react-icons/md";
-import { GrCheckbox } from "react-icons/gr";
+
 import DeleteForm from "../../components/DeleteForm";
 import { useUpdateTodoMutation } from "../../store/api";
 import Deadline from "./Deadline";
@@ -42,20 +42,26 @@ const TodoItem = ({ id, title, details, completed, deadline, dateCreated }) => {
           </h3>
         </div>
 
-        <div className="flex">
-          <Deadline />
-          <button
-            onClick={() => setOpen(!open)}
-            className="hover:opacity-50 mr-1"
-          >
-            {!open && details.length > 0 ? (
-              <MdExpandMore className="text-lg" />
-            ) : details.length > 0 ? (
-              <MdExpandLess className="text-lg" />
-            ) : null}
-          </button>
+        <div className="flex w-2/6 justify-between items-center">
+          <Deadline
+            deadline={deadline}
+            dateCreated={dateCreated}
+            completed={isCompleted}
+          />
+          <div className="flex items-center">
+            <button
+              onClick={() => setOpen(!open)}
+              className="hover:opacity-50 mr-1"
+            >
+              {!open && details.length > 0 ? (
+                <MdExpandMore className="text-lg" />
+              ) : details.length > 0 ? (
+                <MdExpandLess className="text-lg" />
+              ) : null}
+            </button>
 
-          <DeleteForm id={id} type="todos" />
+            <DeleteForm id={id} type="todos" />
+          </div>
         </div>
       </div>
       {open && details !== "" && (
