@@ -11,7 +11,7 @@ const ToDoList = ({ data }) => {
 
   return (
     <div className="w-full p-2">
-      <div className="flex mx-auto w-2/6 justify-center px-5 mb-4">
+      <div className="flex mx-auto md:w-2/6 w-full justify-center px-5 mb-4">
         <Header title="My To Do List" addForm={setShow} show={show} />
 
         <Modal show={show} onRequestClose={handleModal}>

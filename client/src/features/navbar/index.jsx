@@ -10,15 +10,15 @@ const Navbar = ({ data }) => {
     setShow(false);
   };
   return (
-    <div className="w-full mx-auto h-20 flex justify-start">
-      <ul className="font-playfair w-4/5 mx-auto flex items-center justify-between">
+    <div className="w-full mx-auto h-full flex justify-start px-5 mt-5">
+      <ul className="font-playfair ss:w-4/5 mx-auto w-full flex flex-wrap items-center md:justify-between">
         {data.map((el) => {
           return (
             <li
               key={el.id}
               onMouseEnter={() => setDeleteId(el.id)}
               onMouseLeave={() => setDeleteId(null)}
-              className="hover:text-yellow-300 text-blue-hover flex transition duration-500"
+              className="hover:text-yellow-300 text-blue-hover flex transition pt-3 px-5 md:p-0 duration-500"
             >
               <a href={el.link} target="_blank" rel="noreferrer">
                 {el.title}
