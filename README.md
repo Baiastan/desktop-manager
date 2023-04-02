@@ -9,7 +9,7 @@ Instructions How to Run
 1. "npm install"
 2. "npm run dev" - starts server and client 
 
-In Data folder, you might wanna delete my data, but leave empty array. Files sould have emty array like this => [], otherwise it won't work. 
+In server in data folder, you might wanna delete my data, but leave empty array. Files sould have empty array like this => [], otherwise it will crash. 
 
 CLIENT
 for Tailwind to work run following command
