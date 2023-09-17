@@ -7,6 +7,7 @@ import Tutorials from "./features/tutorials";
 import UsefulInfo from "./features/useful-info";
 import Youtube from "./features/youtube";
 import ToDoList from "./features/to-do-list";
+import FileLoader from "./features/pdf-parser/FileLoader";
 import { useSelector } from "react-redux";
 import { useGetLinksQuery, useGetTodoQuery } from "./store/api";
 import { updateLinks, updateTodos } from "./store";
@@ -52,9 +53,7 @@ function App() {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <div className="app">
         <Navbar data={navbar} />
-        {(isLoading || isLoadingTodo) && (
-          <p className="mx-auto text-center text-3xl">Loading...</p>
-        )}
+        {(isLoading || isLoadingTodo) && <p className="mx-auto text-center text-3xl">Loading...</p>}
         <Layout
           section1={{
             left: <Tutorials data={tutorials} />,
@@ -62,7 +61,7 @@ function App() {
             right: <Youtube data={youtube} />,
           }}
           section2={<ToDoList data={dataTodos} />}
-          footer={"footer"}
+          footer={<FileLoader />}
         />
       </div>
     </LocalizationProvider>

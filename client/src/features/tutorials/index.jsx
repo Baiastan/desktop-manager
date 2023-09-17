@@ -12,7 +12,7 @@ const Tutorials = ({ data }) => {
 
   return (
     <>
-      <Header title="Tutorials" addForm={setShow} show={show} />
+      <Header title="Tutorials/Youtube" addForm={setShow} show={show} />
       <ul className="mt-5">
         {data.map(({ title, link, text, id }) => (
           <List title={title} link={link} text={text} key={id} id={id} />

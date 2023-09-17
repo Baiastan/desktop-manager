@@ -37,6 +37,8 @@ export const addTodo = async ({ body }, res) => {
       completed = false,
     } = body;
 
+    console.log("Executed");
+
     const json = JSON.parse(data);
 
     const newTodo = { id, title, details, dateCreated, deadline, completed };
