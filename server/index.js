@@ -7,7 +7,6 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import linksRoute from "./routes/links.js";
 import todosRoute from "./routes/todos.js";
-import sendNotifications from "./routes/sendNotifications.js";
 
 //Configuration
 dotenv.config();
@@ -24,7 +23,6 @@ app.use(cors());
 
 app.use("/api", linksRoute);
 app.use("/api", todosRoute);
-app.use("/api", sendNotifications);
 
 const PORT = process.env.PORT || 9000;
 
