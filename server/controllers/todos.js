@@ -28,14 +28,7 @@ export const getTodos = async (req, res) => {
 //DONE FOR NOW
 export const addTodo = async ({ body }, res) => {
   try {
-    const {
-      id,
-      title,
-      details = "",
-      dateCreated,
-      deadline = null,
-      completed = false,
-    } = body;
+    const { id, title, details = "", dateCreated, deadline = null, completed = false } = body;
 
     console.log("Executed");
 
@@ -53,6 +46,18 @@ export const addTodo = async ({ body }, res) => {
   }
 };
 
+export const addAutoTodo = async (newTodo) => {
+  try {
+    console.log("Adding auto todo");
+    const json = JSON.parse(data);
+    const newData = [newTodo, ...json];
+
+    await writeFile(`${__dirname}/data/todos.json`, JSON.stringify(newData));
+  } catch (e) {
+    console.log("Error occured during adding auto todo", e);
+  }
+};
+
 //DONE
 export const deleteTodo = async (req, res) => {
   try {
@@ -65,10 +70,7 @@ export const deleteTodo = async (req, res) => {
 
     const filteredData = json.filter((el) => el.id !== id);
 
-    await writeFile(
-      `${__dirname}/data/todos.json`,
-      JSON.stringify(filteredData)
-    );
+    await writeFile(`${__dirname}/data/todos.json`, JSON.stringify(filteredData));
 
     res.status(200).json({ success: "Todo was deleted!", data: id });
   } catch (error) {

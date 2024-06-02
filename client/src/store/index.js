@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   links: [],
   todos: [],
+  isOverdue: false,
 };
 
 export const globalSlice = createSlice({
@@ -21,10 +22,12 @@ export const globalSlice = createSlice({
     updateTodos: (state, action) => {
       state.todos = [...action.payload];
     },
+    updateOverdue: (state) => {
+      state.isOverdue = true;
+    },
   },
 });
 
-export const { addNewLink, updateLinks, addNewTodo, updateTodos } =
-  globalSlice.actions;
+export const { addNewLink, updateLinks, addNewTodo, updateTodos, updateOverdue } = globalSlice.actions;
 
 export default globalSlice.reducer;

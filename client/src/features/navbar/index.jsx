@@ -19,14 +19,14 @@ const Navbar = ({ data }) => {
 
   return (
     <div className="w-full mx-auto h-full flex justify-start px-5 mt-5">
-      <ul className="font-playfair ss:w-4/5 mx-auto w-full flex flex-wrap items-center md:justify-between">
+      <ul className="font-playfair ss:w-4/5 mx-auto w-full flex flex-wrap items-center md:justify-between gap-5">
         {data.map((el) => {
           return (
             <li
               key={el.id}
               onMouseEnter={() => setDeleteId(el.id)}
               onMouseLeave={() => setDeleteId(null)}
-              className="hover:text-yellow-300 text-blue-hover flex transition pt-3 px-5 md:p-0 duration-500"
+              className="hover:text-yellow-300 text-blue-hover flex transition pt-3 px-5 md:p-0 duration-500 "
             >
               <a href={el.link} target="_blank" rel="noreferrer">
                 {el.title}

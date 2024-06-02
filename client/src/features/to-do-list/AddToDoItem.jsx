@@ -58,13 +58,8 @@ const AddToDoItem = ({ onCloseRequest }) => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="w-full flex flex-col items-center justify-center"
-    >
-      <h1 className="font-playfair mb-5 text-lg capitalize">
-        Add a To-Do Item
-      </h1>
+    <form onSubmit={handleSubmit} className="w-full flex flex-col items-center justify-center">
+      <h1 className="font-playfair mb-5 text-lg capitalize">Add a To-Do Item</h1>
       <input
         className="w-full bg-dark font-semibold placeholder-white p-3"
         type="text"
@@ -79,34 +74,21 @@ const AddToDoItem = ({ onCloseRequest }) => {
         placeholder="Details"
         onChange={(e) => setText(e.target.value)}
       />
-      <button
-        type="button"
-        className="my-5 text-dark"
-        onClick={() => setDeadline(!deadline)}
-      >
+      <button type="button" className="my-5 text-dark" onClick={() => setDeadline(!deadline)}>
         SET DEADLINE?
       </button>
 
       {deadline ? (
         <>
           {" "}
-          <DatePicker
-            sx={{ marginBottom: "10px" }}
-            value={dateValue}
-            onChange={(newValue) => setDateValue(newValue)}
-          />
-          <TimeField
-            value={dateValue}
-            onChange={(newValue) => setTime(newValue)}
-          />
+          <DatePicker sx={{ marginBottom: "10px" }} value={dateValue} onChange={(newValue) => setDateValue(newValue)} />
+          <TimeField value={dateValue} onChange={(newValue) => setTime(newValue)} />
         </>
       ) : null}
 
       <button
         disabled={disabled}
-        className={`p-2 w-2/6 ${
-          disabled ? "bg-gray-400" : "bg-yell"
-        } font-semibold text-black mt-5 hover:saturate-150 
+        className={`p-2 w-2/6 ${disabled ? "bg-gray-400" : "bg-yell"} font-semibold text-black mt-5 hover:saturate-150 
          hover:cursor-pointer transition duration-500`}
       >
         Submit

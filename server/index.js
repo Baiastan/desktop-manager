@@ -1,5 +1,5 @@
 import express from "express";
-
+import cron from "node-cron";
 import bodyParser from "body-parser";
 import cors from "cors";
 import helmet from "helmet";
@@ -7,6 +7,7 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import linksRoute from "./routes/links.js";
 import todosRoute from "./routes/todos.js";
+import { createAutoTodoTask } from "./lib/crud.js";
 
 //Configuration
 dotenv.config();
@@ -23,6 +24,10 @@ app.use(cors());
 
 app.use("/api", linksRoute);
 app.use("/api", todosRoute);
+
+cron.schedule("0 12 1 * *", () => {
+  createAutoTodoTask("Flower to my wife every month");
+});
 
 const PORT = process.env.PORT || 9000;
 
