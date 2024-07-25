@@ -1,26 +1,66 @@
-import React, { useState } from "react";
-import AddForm from "../../components/AddFormLinks";
-import DeleteForm from "../../components/DeleteForm";
-import Modal from "../../components/Modal";
-import SnakeGame from "../snake-game";
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import AddForm from '../../components/AddFormLinks';
+import DeleteForm from '../../components/DeleteForm';
+import Modal from '../../components/Modal';
+import { updateLinks } from '../../store';
+import { useGetLinksQuery } from '../../store/api';
+import { filterData } from '../../../utils/filter-data-by-category';
+import NavigationItem from './NavigationItem';
 
-const Navbar = ({ data }) => {
+const navLinks = [
+  {
+    to: '/',
+    text: 'Home',
+    exact: true,
+  },
+  {
+    to: '/job-market',
+    text: 'Job Market',
+  },
+  {
+    to: '/design-patterns',
+    text: 'Design Patterns',
+  },
+];
+
+const Navbar = () => {
+  const dataLinks = useSelector((state) => state.global.links);
+  const dispatch = useDispatch();
+  const [navbar, setNavbar] = useState([]);
   const [show, setShow] = useState(false);
-  const [game, setGame] = useState(false);
   const [deleteId, setDeleteId] = useState(null);
+  const { data, isLoading } = useGetLinksQuery();
   const handleModal = () => {
     setShow(false);
   };
 
-  const launchGame = () => {
-    setGame((prev) => !prev);
-    setShow(false);
-  };
+  useEffect(() => {
+    dispatch(updateLinks(data || []));
+  }, [data]);
+
+  useEffect(() => {
+    const filteredNavbar = filterData(dataLinks, 'navbar');
+
+    setNavbar(filteredNavbar);
+  }, [dataLinks]);
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div className="w-full mx-auto h-full flex justify-start px-5 mt-5">
       <ul className="font-playfair ss:w-4/5 mx-auto w-full flex flex-wrap items-center md:justify-between gap-5">
-        {data.map((el) => {
+        {navLinks.map((navLink, index) => (
+          <NavigationItem
+            key={`${index}-${navLink.text}`}
+            text={navLink.text}
+            to={navLink.to}
+          />
+        ))}
+
+        {navbar.map((el) => {
           return (
             <li
               key={el.id}
@@ -35,9 +75,7 @@ const Navbar = ({ data }) => {
             </li>
           );
         })}
-        <li className="hover:text-yellow-300 text-blue-hover flex transition pt-3 px-5 md:p-0 duration-500">
-          <button onClick={() => launchGame()}>Snake Game</button>
-        </li>
+
         <li className="hover:text-blue-hover text-yellow-300  transition duration-500 py-5">
           <button onClick={() => setShow(!show)} className="text-2xl">
             +
@@ -47,9 +85,6 @@ const Navbar = ({ data }) => {
 
       <Modal show={show} onRequestClose={handleModal}>
         <AddForm onCloseRequest={handleModal} category="navbar" />
-      </Modal>
-      <Modal show={game} onRequestClose={launchGame}>
-        <SnakeGame />
       </Modal>
     </div>
   );

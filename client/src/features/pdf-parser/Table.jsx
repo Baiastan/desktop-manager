@@ -8,8 +8,6 @@ const Table = ({ data }) => {
   const [car, setCar] = useState("prius");
   const [cars, setCars] = useState([]);
 
-  console.log(data);
-
   const lastIndex = data[car].months.length - 1;
   const lastMonth = data[car].months[lastIndex];
   const [showMonths, setShowMonths] = useState(false);

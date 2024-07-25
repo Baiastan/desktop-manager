@@ -28,13 +28,13 @@ export const getTodos = async (req, res) => {
 //DONE FOR NOW
 export const addTodo = async ({ body }, res) => {
   try {
-    const { id, title, details = "", dateCreated, deadline = null, completed = false } = body;
+    const { id, title, details = "", dateCreated, deadline = null, completed = false, category = "todo" } = body;
 
     console.log("Executed");
 
     const json = JSON.parse(data);
 
-    const newTodo = { id, title, details, dateCreated, deadline, completed };
+    const newTodo = { id, title, details, dateCreated, deadline, completed, category };
 
     const newData = [newTodo, ...json];
 

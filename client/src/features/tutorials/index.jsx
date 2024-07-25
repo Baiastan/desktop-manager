@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import AddForm from "../../components/AddFormLinks";
-import Header from "../../components/Header";
-import List from "../../components/List";
-import Modal from "../../components/Modal";
+import React, { useState } from 'react';
+import AddForm from '../../components/AddFormLinks';
+import HeaderWithButton from '../../components/HeaderWithButton';
+import List from '../../components/List';
+import Modal from '../../components/Modal';
 
 const Tutorials = ({ data }) => {
   const [show, setShow] = useState(false);
@@ -12,7 +12,12 @@ const Tutorials = ({ data }) => {
 
   return (
     <>
-      <Header title="Tutorials/Youtube" addForm={setShow} show={show} />
+      <HeaderWithButton
+        title="Tutorials/Youtube"
+        addForm={setShow}
+        show={show}
+      />
+
       <ul className="mt-5">
         {data.map(({ title, link, text, id }) => (
           <List title={title} link={link} text={text} key={id} id={id} />

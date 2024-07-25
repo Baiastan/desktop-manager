@@ -1,51 +1,51 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const api = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: "http://127.0.0.1:5001/api/" }),
-  reducerPath: "myApi",
-  tagTypes: ["Links", "ToDo", "InitialTotalHours"],
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://127.0.0.1:5001/api/' }),
+  reducerPath: 'myApi',
+  tagTypes: ['Links', 'ToDo', 'InitialTotalHours'],
   endpoints: (build) => ({
     getLinks: build.query({
-      query: () => "links",
-      providesTags: ["Links"],
+      query: () => 'links',
+      providesTags: ['Links'],
     }),
     addLinks: build.mutation({
       query: (data) => ({
-        url: "links",
-        method: "POST",
+        url: 'links',
+        method: 'POST',
         body: data,
       }),
     }),
     deleteLink: build.mutation({
       query: (id) => ({
         url: `links/${id}`,
-        method: "DELETE",
+        method: 'DELETE',
       }),
     }),
     getTodo: build.query({
-      query: () => "todos",
-      providesTags: ["ToDo"],
+      query: () => 'todos',
+      providesTags: ['ToDo'],
     }),
     addTodo: build.mutation({
       query: (data) => ({
-        url: "todos",
-        method: "POST",
+        url: 'todos',
+        method: 'POST',
         body: data,
       }),
     }),
     deleteTodo: build.mutation({
       query: (id) => ({
         url: `todos/${id}`,
-        method: "DELETE",
+        method: 'DELETE',
       }),
     }),
     updateTodo: build.mutation({
       query: ({ id, ...completed }) => ({
         url: `todos/${id}`,
-        method: "PUT",
+        method: 'PUT',
         body: completed,
       }),
-      invalidatesTags: ["ToDo"],
+      invalidatesTags: ['ToDo'],
     }),
   }),
 });

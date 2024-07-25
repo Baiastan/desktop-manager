@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
-import uuid from "react-uuid";
-import { useAddLinksMutation } from "../store/api";
-import { useDispatch } from "react-redux";
-import { addNewLink } from "../store";
+import React, { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { useAddLinksMutation } from '../store/api';
+import { useDispatch } from 'react-redux';
+import { addNewLink } from '../store';
+import Input from './Input';
+import Button from './Button';
 
 const AddForm = ({ onCloseRequest, category }) => {
-  const [link, setLink] = useState("");
-  const [title, setTitle] = useState("");
-  const [text, setText] = useState("");
+  const [link, setLink] = useState('');
+  const [title, setTitle] = useState('');
+  const [text, setText] = useState('');
   const dispatch = useDispatch();
   const [disabled, setIsDisabled] = useState(true);
 
@@ -23,8 +25,8 @@ const AddForm = ({ onCloseRequest, category }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const data = { id: uuid(), link, title, text, category };
+    const id = uuidv4();
+    const data = { id, link, title, text, category };
 
     dispatch(addNewLink(data));
 
@@ -33,9 +35,9 @@ const AddForm = ({ onCloseRequest, category }) => {
 
     onCloseRequest();
 
-    setLink("");
-    setTitle("");
-    setText("");
+    setLink('');
+    setTitle('');
+    setText('');
   };
 
   return (
@@ -44,37 +46,37 @@ const AddForm = ({ onCloseRequest, category }) => {
       className="w-full flex flex-col items-center justify-center"
     >
       <h1 className="font-playfair mb-5 text-lg capitalize">{category}</h1>
-      <input
-        className="w-full bg-dark font-semibold placeholder-white p-3"
+      <Input
         type="text"
         value={link}
-        onChange={(e) => setLink(e.target.value)}
+        onChange={setLink}
         placeholder="Insert link here"
       />
-      <input
-        className="w-full bg-dark font-semibold placeholder-white p-3 mt-2"
+
+      <Input
+        className="mt-2"
         type="text"
         value={title}
         placeholder="title"
-        onChange={(e) => setTitle(e.target.value)}
+        onChange={setTitle}
       />
-      <input
-        className="w-full bg-dark  placeholder-white p-3 mt-5"
+
+      <Input
+        className="mt-5"
         type="text"
         value={text}
-        onChange={(e) => setText(e.target.value)}
+        onChange={setText}
         placeholder="Note"
       />
 
-      <button
+      <Button
         disabled={disabled}
-        className={`p-2 w-2/6 ${
-          disabled ? "bg-gray-400" : "bg-yell"
-        } font-semibold text-black mt-5 hover:saturate-150 
-         hover:cursor-pointer transition duration-500`}
+        type="submit"
+        className={`p-2 w-2/6 ${disabled ? 'bg-gray-400' : 'bg-yell'} font-semibold text-black mt-5 hover:saturate-150 
+           hover:cursor-pointer transition duration-500`}
       >
         Submit
-      </button>
+      </Button>
     </form>
   );
 };
