@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Modal = ({ children, onRequestClose, show }) => {
   return show ? (
@@ -7,7 +7,7 @@ const Modal = ({ children, onRequestClose, show }) => {
       onClick={onRequestClose}
     >
       <div
-        className="bg-blue w-[500px] mx-auto my-[10%] relative p-5 flex justify-center"
+        className="bg-blue w-[50%] max-w-[600px] mx-auto my-[10%] relative p-5 flex justify-center"
         onClick={(e) => e.stopPropagation()}
       >
         <button

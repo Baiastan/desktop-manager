@@ -1,0 +1,4 @@
+{
+  "app.title": "Bievenido a My App",
+  "app.greeting": "Hola, {name}!"
+}

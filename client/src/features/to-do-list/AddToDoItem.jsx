@@ -6,15 +6,14 @@ import { useAddTodoMutation } from '../../store/api';
 import { addNewTodo } from '../../store';
 import Input from '../../components/Input';
 
-const AddToDoItem = ({
-  onCloseRequest,
-  category = 'todo',
-  isEditing = false,
-}) => {
+const AddToDoItem = ({ onCloseRequest, category = 'todo' }) => {
   const [todo, setToDo] = useState('');
   const [text, setText] = useState('');
   const [disabled, setIsDisabled] = useState(true);
   const [deadline, setDeadline] = useState(null);
+
+  const [meetingLink, setMeetingLink] = useState('');
+  const [jobDescLink, setJobDescLink] = useState('');
 
   const [dateValue, setDateValue] = useState(null);
   const [time, setTime] = useState(null);
@@ -50,6 +49,8 @@ const AddToDoItem = ({
       id,
       title: todo,
       details: text,
+      jobDescLink,
+      meetingLink,
       category,
       dateCreated,
       deadline: d,
@@ -78,6 +79,20 @@ const AddToDoItem = ({
         value={text}
         placeholder="Details"
         onChange={setText}
+      />
+      <Input
+        className="mt-2"
+        type="text"
+        value={jobDescLink}
+        placeholder="Link to JD"
+        onChange={setJobDescLink}
+      />
+      <Input
+        className="mt-2"
+        type="text"
+        value={meetingLink}
+        placeholder="Link to Meeting"
+        onChange={setMeetingLink}
       />
       <button
         type="button"

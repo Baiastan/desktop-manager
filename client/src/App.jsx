@@ -1,14 +1,13 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-
-import Home from './pages/home/Home';
-import Practice from './pages/study-practice/Practice';
 import Navbar from './features/navbar';
 
-import BlockWrapper from './pages/study-practice/BlockWrapper';
-import JobMarket from './pages/job-market/JobMarket';
+const Home = lazy(() => import('./pages/home/Home'));
+const Practice = lazy(() => import('./pages/study-practice/Practice'));
+const JobMarket = lazy(() => import('./pages/job-market/JobMarket'));
 
 function App() {
   return (
@@ -16,11 +15,13 @@ function App() {
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <Router>
           <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/design-patterns" element={<Practice />} />
-            <Route path="/job-market" element={<JobMarket />} />
-          </Routes>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/design-patterns" element={<Practice />} />
+              <Route path="/job-market" element={<JobMarket />} />
+            </Routes>
+          </Suspense>
         </Router>
       </LocalizationProvider>
     </div>

@@ -26,7 +26,7 @@ const Mediator = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col w-2/6">
       <h1 className="text-white text-2xl">
         Mediator Pattern Interactive Example
       </h1>

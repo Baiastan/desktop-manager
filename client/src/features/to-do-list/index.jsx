@@ -6,6 +6,7 @@ import Modal from '../../components/Modal';
 import AddToDoItem from './AddToDoItem';
 import TodoItem from './TodoItem';
 
+//TODO: Make it resuable for whole types of todos and lists
 const ToDoList = ({ data }) => {
   const [show, setShow] = useState(false);
 

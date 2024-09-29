@@ -24,17 +24,36 @@ export const getTodos = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+// id,
+// title: todo,
+// details: text,
+// jobDescLink,
+// meetingLink,
+// category,
+// dateCreated,
+// deadline: d,
+// completed: false,
 
 //DONE FOR NOW
 export const addTodo = async ({ body }, res) => {
   try {
-    const { id, title, details = "", dateCreated, deadline = null, completed = false, category = "todo" } = body;
+    const {
+      id,
+      title,
+      details = "",
+      dateCreated,
+      deadline = null,
+      completed = false,
+      category = "todo",
+      jobDescLink,
+      meetingLink,
+    } = body;
 
     console.log("Executed");
 
     const json = JSON.parse(data);
 
-    const newTodo = { id, title, details, dateCreated, deadline, completed, category };
+    const newTodo = { id, title, details, dateCreated, deadline, completed, category, jobDescLink, meetingLink };
 
     const newData = [newTodo, ...json];
 

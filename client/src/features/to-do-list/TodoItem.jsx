@@ -12,7 +12,17 @@ import Deadline from './Deadline';
 import Modal from '../../components/Modal';
 import AddToDoItem from './AddToDoItem';
 import DateFormat from '../../components/DateFormat';
-const TodoItem = ({ id, title, details, completed, deadline, dateCreated }) => {
+import BlockWrapper from '../../pages/study-practice/BlockWrapper';
+const TodoItem = ({
+  id,
+  title,
+  details,
+  completed,
+  deadline,
+  dateCreated,
+  jobDescLink,
+  meetingLink,
+}) => {
   const [open, setOpen] = useState(false);
   const [isCompleted, setIsCompleted] = useState(completed);
   const [updateTodo, {}] = useUpdateTodoMutation();
@@ -63,24 +73,27 @@ const TodoItem = ({ id, title, details, completed, deadline, dateCreated }) => {
             />
             <DateFormat date={deadline} />
             <div className="flex items-center">
-              <button
-                onClick={() => setOpen(!open)}
-                className="hover:opacity-50 mr-1"
-              >
-                {!open && details.length > 0 ? (
-                  <MdExpandMore className="text-lg" />
-                ) : details.length > 0 ? (
-                  <MdExpandLess className="text-lg" />
-                ) : null}
-              </button>
-
               <DeleteForm id={id} type="todos" />
             </div>
           </div>
         </div>
       </li>
+
       <Modal show={open} onRequestClose={handleClickOnItem}>
-        <AddToDoItem isEditing={true} />
+        <BlockWrapper showAddText={false}>
+          <div>
+            <h2>Details</h2>
+            <p>{details}</p>
+          </div>
+          <div className="flex flex-col">
+            <a className="underline" href={jobDescLink} target="_blank">
+              Take me to Job Description
+            </a>
+            <a href={meetingLink} className="underline" target="_blank">
+              Take me to Interview Link
+            </a>
+          </div>
+        </BlockWrapper>
       </Modal>
     </>
   );

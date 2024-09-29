@@ -9,14 +9,14 @@ import TodoItem from '../to-do-list/TodoItem';
 import { useGetTodoQuery } from '../../store/api';
 import { updateTodos } from '../../store';
 
-const JobList = () => {
+const JobsApplied = () => {
   const [show, setShow] = useState(false);
 
   const dispatch = useDispatch();
   const dataTodos = useSelector((state) => state.global.todos);
   const { data: todos } = useGetTodoQuery();
 
-  const jobTodos = dataTodos.filter((todo) => todo?.category === 'jobTodo');
+  const jobTodos = dataTodos.filter((todo) => todo?.category === 'jobsApplied');
 
   const handleModal = () => {
     setShow(false);
@@ -26,39 +26,26 @@ const JobList = () => {
     dispatch(updateTodos(todos || []));
   }, [todos]);
 
+  console.log(todos);
+
   return (
     <div className="w-full p-2">
       <div className="flex mx-auto md:w-2/6 w-full justify-center px-5 mb-4">
-        <HeaderWithButton
-          title="Job Interviews"
-          addForm={setShow}
-          show={show}
-        />
+        <HeaderWithButton title="Jobs Applied" addForm={setShow} show={show} />
 
         <Modal show={show} onRequestClose={handleModal}>
-          <AddToDoItem onCloseRequest={handleModal} category="jobTodo" />
+          <AddToDoItem onCloseRequest={handleModal} category="jobsApplied" />
         </Modal>
       </div>
       <ul>
         {(jobTodos || []).map(
-          ({
-            id,
-            title,
-            details,
-            completed,
-            deadline,
-            dateCreated,
-            jobDescLink,
-            meetingLink,
-          }) => (
+          ({ id, title, details, completed, dateCreated }) => (
             <TodoItem
               key={id}
               title={title}
-              deadline={deadline}
+              deadline={dateCreated}
               completed={completed || false}
               details={details}
-              jobDescLink={jobDescLink}
-              meetingLink={meetingLink}
               dateCreated={dateCreated}
               id={id}
             />
@@ -69,4 +56,4 @@ const JobList = () => {
   );
 };
 
-export default JobList;
+export default JobsApplied;
