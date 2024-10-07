@@ -14,10 +14,36 @@ import SWR from '../../large-scale-web-apps-examples/data-fetching/swr(stale-whi
 import ReactQuery from '../../large-scale-web-apps-examples/data-fetching/react-query/ReactQueryFetch';
 import ReactIntl from '../../large-scale-web-apps-examples/i18n/react-intl/ReactIntl';
 import DataLoadingWithHoc from '../../design-patterns-examples/HOC/DataLoadingWithHoc';
+import Accordion from '../../gfe-practice/Accordion';
+import AnalogClock from '../../gfe-practice/analog-clock/AnalogClock';
+import DataTable from '../../gfe-practice/data-table/DataTable';
+import RollDice from '../../gfe-practice/roll-dice/RollDice';
+import GridLightsUber from '../../gfe-practice/grid-lights-uber/GridLightsUber';
+
+import usersData from '../../gfe-practice/data-table/users.json';
+import houses from '../../gfe-practice/data-table/houses.json';
+import Header from '../../components/Header';
 
 const Practice = () => {
   return (
     <LayoutWrapper>
+      <BlockWrapper>
+        <GridLightsUber />
+      </BlockWrapper>
+      <BlockWrapper>
+        <RollDice />
+      </BlockWrapper>
+      <BlockWrapper>
+        <DataTable usersData={usersData} />
+        <Header>Houses</Header>
+        <DataTable usersData={houses} />
+      </BlockWrapper>
+      <BlockWrapper>
+        <AnalogClock />
+      </BlockWrapper>
+      <BlockWrapper>
+        <Accordion />
+      </BlockWrapper>
       <BlockWrapper>
         <DataLoadingWithHoc />
       </BlockWrapper>

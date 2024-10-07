@@ -1,0 +1,58 @@
+.clock-wrapper {
+  border: 1px solid black;
+  background-color: white;
+  height: 500px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  display: block;
+  flex-shrink: 0;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 100%;
+  border: 2px solid #ccc;
+  transform: rotate(180deg);
+}
+
+.clock-hand {
+  background-color: #ccc;
+  position: absolute;
+  width: 1px;
+  height: calc(var(--size) / 2);
+  left: calc(var(--size) / 2);
+  top: calc(var(--size) / 2);
+  transform-origin: top center;
+}
+.center {
+  color: black;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgb(4, 4, 4);
+  position: absolute;
+  left: calc(var(--size) / 2.08);
+  z-index: 1;
+  top: calc(var(--size) / 2.06);
+  transform-origin: top center;
+}
+
+.clock-label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  width: 20px;
+}
+
+.hour {
+  background-color: black;
+  width: 2px;
+}
+
+.minute {
+  background-color: rgb(166, 183, 182);
+}

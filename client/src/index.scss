@@ -12,6 +12,20 @@ body,
   @apply text-white;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 p {
   word-break: break-word;
+}
+
+.stickyHeader {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  font-size: 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
