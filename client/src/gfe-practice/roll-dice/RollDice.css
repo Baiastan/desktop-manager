@@ -1,0 +1,115 @@
+.roll-dice-wrapper {
+  color: black;
+
+  h1 {
+    color: white;
+  }
+
+  input {
+    width: 100px;
+    padding: 5px;
+    font-size: larger;
+  }
+}
+
+.dice {
+  position: relative;
+
+  width: 50px;
+  border-radius: 1px;
+  height: 50px;
+}
+
+.dice-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  width: 225px;
+  padding: 10px;
+  background-color: grey;
+}
+
+.dots-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  background-color: white;
+  height: 60px;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.dot--center {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dot--top-right {
+  top: 0;
+  right: 0;
+}
+
+.dot--top-left {
+  top: 0;
+  left: 0;
+}
+
+.dot--bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.dot--bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+.dot--center-right {
+  right: 0;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+.dot--center-left {
+  left: 0;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+/* 
+1: ['dot--center'],
+2: ['dot--top-right', 'dot--bottom-left'],
+3: ['dot--top-right', 'dot--center', 'dot--bottom-left'],
+4: [
+  'dot--top-left',
+  'dot--top-right',
+  'dot--bottom-left',
+  'dot--bottom-right',
+],
+5: [
+  'dot--top-left',
+  'dot--top-right',
+  'dot--center',
+  'dot--bottom-left',
+  'dot--bottom-right',
+],
+6: [
+  'dot--top-left',
+  'dot--top-right',
+  'dot--center-left',
+  'dot--center-right',
+  'dot--bottom-left',
+  'dot--bottom-right',
+], */
