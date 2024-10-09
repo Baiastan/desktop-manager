@@ -7,6 +7,7 @@ import Button from '../../components/Button';
 import usePaginateUsers from './usePaginateUsers';
 
 const formatLabel = (label) => {
+  console.log(label);
   const snakeToWords = label.split('_');
 
   const camelToWords = snakeToWords.map((word) =>
