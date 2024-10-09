@@ -14,7 +14,6 @@
 .page-buttons {
   display: flex;
   align-items: center;
-
   justify-content: center;
   flex: 1;
 }
@@ -23,12 +22,11 @@ table {
   background-color: white;
   color: black;
   text-align: left;
-  min-width: 700px;
   table-layout: fixed;
 
   th {
     font-weight: 700;
-    width: 130px;
+    width: max-content;
     cursor: pointer;
     padding: 10px;
     border-bottom: 1px solid grey;

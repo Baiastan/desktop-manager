@@ -100,7 +100,7 @@ const DataTable = ({ usersData }) => {
   };
 
   return (
-    <div>
+    <div className="table-wrapper">
       <Table header={headers} data={pageUsers} onSort={handleSort} />
       <div className="button-container">
         <select value={showNum} onChange={onShowNumChange} className="option">

@@ -37,7 +37,6 @@ const Dice = ({ num }) => {
         {num >= 1 &&
           num <= 6 &&
           DICE_FACE_DOT_POSITIONS[num]?.map((el, index) => {
-            console.log(el);
             return <span key={index} className={`${el} dot`}></span>;
           })}
       </div>
