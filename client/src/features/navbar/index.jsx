@@ -19,8 +19,8 @@ const navLinks = [
     text: 'Job Market',
   },
   {
-    to: '/design-patterns',
-    text: 'Design Patterns',
+    to: '/practice',
+    text: 'Practice',
   },
 ];
 

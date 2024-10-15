@@ -1,0 +1,39 @@
+.grid {
+  --size: 100px;
+  display: grid;
+  gap: 8px;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.emojie-item {
+  border: 2px solid white;
+  padding: 10px;
+  font-size: 48px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: grey;
+}
+
+/* emojie__active' : 'emojie__hidden',
+        match && 'emojie__match', */
+
+.emojie__hidden p {
+  visibility: hidden;
+}
+
+.emojie__active {
+  visibility: unset;
+}
+
+.emojie__match {
+  visibility: unset;
+  background-color: white;
+}
+
+.emojie__match p {
+  visibility: unset;
+}

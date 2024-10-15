@@ -24,9 +24,28 @@ import usersData from '../../gfe-practice/data-table/users.json';
 import houses from '../../gfe-practice/data-table/houses.json';
 import Header from '../../components/Header';
 
+import AppFileExpolrer from '../../gfe-practice/file-explorer/App';
+
+import AppTrafficLight from '../../gfe-practice/traffic-light/AppTrafficLight';
+
+import AuthCodeApp from '../../gfe-practice/auth-code-input/AuthCodeApp';
+import AppMemory from '../../gfe-practice/memory-game/AppMemory';
+
 const Practice = () => {
   return (
     <LayoutWrapper>
+      <BlockWrapper>
+        <AppMemory />
+      </BlockWrapper>
+      <BlockWrapper>
+        <AuthCodeApp />
+      </BlockWrapper>
+      <BlockWrapper>
+        <AppTrafficLight />
+      </BlockWrapper>
+      <BlockWrapper>
+        <AppFileExpolrer />
+      </BlockWrapper>
       <BlockWrapper>
         <GridLightsUber />
       </BlockWrapper>
