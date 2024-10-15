@@ -1,0 +1,15 @@
+.file-list {
+  padding-left: 16px;
+}
+
+.file-item-button {
+  background-color: transparent;
+  line-height: 1.5;
+}
+
+.file-item-button--directory {
+  color: yellow;
+  display: flex;
+  gap: 4px;
+  font-weight: bold;
+}
